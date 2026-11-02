@@ -14,9 +14,13 @@ class BST {
 private:
     Node* root;
     Node* insertRec(Node* node, int data);
+    void printPreorder(Node* node);
+    void printInorder(Node* node);
+    void printPostorder(Node* node);
 public:
     BST();
     void insert(int data);
+    void display(int method);
 };
 
 #endif
