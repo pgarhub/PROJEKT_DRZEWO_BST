@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <string>
 
 struct Node {
     int data;
@@ -20,6 +22,7 @@ private:
     Node* minValueNode(Node* node);
     void destroyTree(Node* node);
     bool searchPathRec(Node* node, int data, std::vector<int>& path);
+    void saveToTextFileRec(Node* node, std::ofstream& file);
 
     void printPreorder(Node* node);
     void printInorder(Node* node);
@@ -33,6 +36,10 @@ public:
     void clear();
     void searchPath(int data);
     void display(int method);
+    void saveToTextFile(const std::string& filename);
+
+    Node* getRoot() const { return root; }
+    void setRoot(Node* newRoot) { root = newRoot; }
 };
 
 #endif

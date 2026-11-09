@@ -122,3 +122,22 @@ void BST::printPostorder(Node* node) {
     printPostorder(node->right);
     cout << node->data << " ";
 }
+
+void BST::saveToTextFile(const string& filename) {
+    ofstream file(filename);
+    if (file.is_open()) {
+        saveToTextFileRec(root, file);
+        file.close();
+        cout << "Zapisano do pliku tekstowego.\n";
+    }
+    else {
+        cout << "Nie mozna otworzyc pliku.\n";
+    }
+}
+
+void BST::saveToTextFileRec(Node* node, ofstream& file) {
+    if (node == nullptr) return;
+    file << node->data << " ";
+    saveToTextFileRec(node->left, file);
+    saveToTextFileRec(node->right, file);
+}
