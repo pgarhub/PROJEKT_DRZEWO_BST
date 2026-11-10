@@ -1,3 +1,8 @@
+/**
+ * @file BST.cpp
+ * @brief Implementacja metod klasy binarnego drzewa poszukiwañ (BST).
+ */
+
 #include "BST.h"
 
 using namespace std;

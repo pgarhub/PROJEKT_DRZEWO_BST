@@ -1,3 +1,8 @@
+/**
+ * @file FileManager.cpp
+ * @brief Implementacja metod klasy FileManager do obs³ugi plików.
+ */
+
 #include "FileManager.h"
 #include <fstream>
 #include <iostream>
@@ -17,7 +22,7 @@ void FileManager::saveBinary(BST& tree, const string& filename) {
 }
 
 void FileManager::saveBinaryRec(Node* node, ofstream& file) {
-    int marker = -1;
+    int marker = -1; // Marker oznaczaj¹cy nullptr
     if (node == nullptr) {
         file.write(reinterpret_cast<char*>(&marker), sizeof(int));
         return;
@@ -30,7 +35,7 @@ void FileManager::saveBinaryRec(Node* node, ofstream& file) {
 void FileManager::loadBinary(BST& tree, const string& filename) {
     ifstream file(filename, ios::binary);
     if (file.is_open()) {
-        tree.clear();
+        tree.clear(); // Wyczyœæ stare drzewo przed wczytaniem nowego
         tree.setRoot(loadBinaryRec(file));
         file.close();
         cout << "Wczytano binarnie.\n";

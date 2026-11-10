@@ -1,10 +1,19 @@
-﻿#include "BST.h"
+﻿/**
+ * @file main.cpp
+ * @brief Główny plik programu realizujący pętlę menu oraz interakcję z użytkownikiem.
+ * @author Damian Kiełbasa, Patryk Gargula
+ */
+
+#include "BST.h"
 #include "FileManager.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
+/**
+ * @brief Wypisuje dostępne opcje menu na standardowe wyjście (konsolę).
+ */
 void printMenu() {
     cout << "\n--- MENU ---\n";
     cout << "1. Dodaj element\n";
@@ -20,6 +29,10 @@ void printMenu() {
     cout << "Wybierz opcje: ";
 }
 
+/**
+ * @brief Główna funkcja programu, uruchamia pętlę obsługującą wybory użytkownika.
+ * @return 0 w przypadku pomyślnego zakończenia.
+ */
 int main() {
     BST tree;
     FileManager fileManager;
